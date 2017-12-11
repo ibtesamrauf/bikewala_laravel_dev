@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use Jrean\UserVerification\Traits\VerifiesUsers;
+use Jrean\UserVerification\Facades\UserVerification;
+use Illuminate\Http\Request;
+
 class RegisterController extends Controller
 {
     /*
@@ -21,6 +25,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    use VerifiesUsers;
 
     /**
      * Where to redirect users after registration.
@@ -36,7 +41,8 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        // $this->middleware('guest');
+        $this->middleware('guest',['except' => ['getVerification', 'getVerificationError']]);
     }
 
     /**
@@ -81,5 +87,14 @@ class RegisterController extends Controller
             'have_bike' => $data['have_bike'],
             'bike_model' => $data['bike_model'],
         ]);
+    }
+    //for register vie email vatrification
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $user = $this->create($request->all());
+        UserVerification::generate($user);
+        UserVerification::send($user, 'My Custom E-mail Subject');
+        return back()->withAlert('Register successfully, please verify your email.');
     }
 }

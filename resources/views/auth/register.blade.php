@@ -17,6 +17,16 @@
     
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
+    <!-- email varification register part -->
+    @if(Session::has('alert'))
+    <div class="alert alert-success">
+        {{ Session::get('alert') }}
+        @php
+        Session::forget('alert');
+        @endphp
+    </div>
+    @endif
+
     <div class="b-submit">
             <div class="container">
                 <div class="row">
