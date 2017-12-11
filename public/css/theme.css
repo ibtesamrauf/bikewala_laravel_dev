@@ -486,3 +486,6 @@ label.s-submitCheck{
 	transform: rotate(360deg);
 }
 }
+.error_input_to_red{
+    border-color: #a94442;
+}

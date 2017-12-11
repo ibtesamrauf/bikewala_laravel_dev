@@ -5,7 +5,7 @@
 			<div class="col-xs-4">
 				<div class="b-footer__company wow fadeInLeft" data-wow-delay="0.3s">
 					<div class="b-nav__logo">
-						<img src="images/logo/footer-logo.png">
+						<img src="{{ asset('images/logo/footer-logo.png') }}">
 					</div>
                                             <p>&copy; 2016 Powered by <a href="http://www.bikewalla.pk/">BIKEWALA.PK</a></p>
 				</div>

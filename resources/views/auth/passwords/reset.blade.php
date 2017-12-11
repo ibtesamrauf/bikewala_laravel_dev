@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('layouts.inc_header')
+    @include('layouts.inc_nav')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
