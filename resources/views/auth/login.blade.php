@@ -5,6 +5,14 @@
     @include('layouts.inc_nav')
 
     <!--b-breadCumbs-->
+    @if(Session::has('alert'))
+    <div class="alert alert-success">
+        {{ Session::get('alert') }}
+        @php
+        Session::forget('alert');
+        @endphp
+    </div>
+    @endif
     <div class="b-submit">
         <div class="container">
             <div class="row">
