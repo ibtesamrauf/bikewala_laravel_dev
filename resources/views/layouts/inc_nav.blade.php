@@ -29,11 +29,11 @@
                                 
                             </li>
                             -->
-                            <li><a href="index.php">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="#">New Bikes</a></li>
-                            <li><a href="bikelisting.php">Used Bikes</a></li>
-                            <li><a href="bikeadd.php">Sell a Bike</a></li>
-                            <li><a href="userlisting.php">Directory</a></li>
+                            <li><a href="/bikelisting">Used Bikes</a></li>
+                            <li><a href="/bikeadd">Sell a Bike</a></li>
+                            <li><a href="/userlisting">Directory</a></li>
                             <!--
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle='dropdown' href="#">Store <span class="fa fa-caret-down"></span></a>
