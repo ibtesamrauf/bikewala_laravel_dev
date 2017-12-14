@@ -29,7 +29,11 @@
                                 
                             </li>
                             -->
-                            <li><a href="/">Home</a></li>
+                            @if (Auth::guest())
+                                <li><a href="/">Home</a></li>
+                            @else
+                                <li><a href="/home">Home</a></li>
+                            @endif
                             <li><a href="#">New Bikes</a></li>
                             <li><a href="/bikelisting">Used Bikes</a></li>
                             <li><a href="/bikeadd">Sell a Bike</a></li>
